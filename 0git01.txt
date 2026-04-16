@@ -1,0 +1,136 @@
+## 깃허브 특강 (1일차) ##
+점심 : 11시50분 ~ 1시10분
+종료 : 17시51분
+- 강의 대상 : 깃/깃허브를 처음 만나는 수강생
+- 미니 특강
+   . 리눅스 기본 명령어 --> WSL (Windows Subsystem for Linux)
+   . 자격증 관련 >> 취업에 도움이 될.....
+
+- 스포츠 선수의 공통 필수 역량 ? 체력
+- IT 전문가의 공통 필수 역량 ? 코딩 실력.
+
+- IT 전문가 ? <도메인 지식(IT 외의 전문지식)> + 코딩 실력 + AI 코웍
+
+https://cafe.naver.com/githubstudy/23  --> git@git
+** 소프트웨어 라이선스 **
+- 오픈 소스(Open Source) : 상업에도 무료. 소스 코드도 공개.
+	철학 : Free ---> 사용의 자유. 배포의 자유. 수정의 자유. 판매의 자유.
+- 프리웨어(Freeware, Adware) : 사용은 무료. 소스 공개X. 카카오톡/반디집/.......
+- 쉐어웨어(Shareware) : 일정 기간만 무료. 그 이후는 유료.
+- 상용 S/W : Windows, Office, HWP, Phtoshop.......
+
+** 오픈 소스의 최대의 적 -----> Microsoft (빌게이츠)  : M$는 ~~~
+
+** 리눅스가 필요 --> WSL (Windows Subsystem for Linux) **
+Mac(=Unix=Linux) --> 터미널( Linux Shell )
+Windows --> 명령 프롬프트 (명령어 20~30개) --> 파워셸(명령어 수천개, 새로운 명령)
+	--> 리눅스의 Shell을 아예 포함 (WSL)
+
+Unix,Linux,Mac --> 터미널(Shell, 명령어 수천개)
+
+** 맥 --> Windows 11 for ARM , VMware Fusion 설치 **
+
+** 리눅스 설치, WSL **
+(0) 전제 조건 : BIOS에서 CPU 가상화가 켜있어야 함 (대부분 켜있음)
+(1) [Windows 기능] >> 'Linux용 Windows 하위 시스템' 체크
+(2) 재부팅
+(3) 파워셸 :  wsl  --update   ==> 또 재부팅
+(4) 파워셸 : wsl  --install  -d  Ubuntu  ==> 우분투 리눅스 설치
+(5) 한동안 설치됨 ==> 리눅스 자동 실행 (만약 안되면 [시작]>[Ubuntu] 클릭)
+     	Unix username : 새 사용자 지정(karina)
+	password : karina  (입력하는 화면 안보임)
+(6) 프롬프트가 $로 변경됨 
+
+** 1시 10분에 이어서 진행 **
+
+** 디렉터리(=폴더) 경로 구분자 **
+Windows : 백슬래시(\)    C:\gitStudy\Test1 --> 자바: "C:\\gitStudy\\Test1"
+	==> C:/gitStudy/Test1,  "C:/gitStudy/Test1"
+Linux(=Unix=Mac) : 슬래시(/)   /hong/gitStudy/Test1 --> 자바 "/hong/gitStudy/Test1"
+
+퀴즈 : MyTest1 저장소 생성해 보기
+
+## 미니특강 1 : 리눅스 명령어 ##
+* 리눅스 설치
+   . 별도의 컴퓨터에 설치
+   . 가상머신 : VMware, Hyper-V, Virtual Box....
+   . Docker를 사용 : 완전한 리눅스 X
+   . WSL : Windows Subsystem for Linux --> 완전한 리눅스 O
+* WSL 간단 개요
+  - 시작 : Windows 10 출시 1주년 기념.
+* 의미 : 윈도에서도 맥/리눅스의 다기능 터미널을 사용할 수 있다.
+   - 명령 프롬프트
+   - 파워셸 
+  - WSL (완전한 리눅스)을 윈도 OS안에 포함
+* WSL 명령어 요약
+  wsl  --install   -d  배포판  : 리눅스 설치(배포판 : Ubuntu, Rocky, Centos, .........)
+  wsl  --list  --online  : 설치 가능한 리눅스 배포판 목록
+	--> 추가로 windows store에서 검색 후 설치 가능
+
+** 리눅스 기본 명령어 **
+.pwd : Print Working Directory. 현재 디렉터리 출력	
+	C:\ --> 최상위.  리눅스 -->  /
+. cd 폴더명 : Change Directory. 폴더 이동
+. cd : 자신의 홈폴더로 이동
+. ls : List. 폴더 및 파일 목록 출력. 
+	-l. d: 디렉터리, -:파일, l:Link(바로가기 아이콘)
+. clear
+. mkdir   폴더명 : Make Directory. -p
+. rmdir  폴더명 : Remove Directory
+. rm -rf 폴더명 : 강력하게 폴더 삭제 --> 주의!
+. touch 파일명 : 빈 파일 생성
+. cp 원본 타겟 : Copy
+. mv 원본 타겟 : Move 이름변경 & 폴더 이동
+. rm -f 파일명 : Remove.
+. vi 파일명 --> 명령모드--> i --> 편집모드 --> (코딩작업)
+  --> ESC --> 명령모드 --> :wq
+. cat 파일명 : 내용 출력
+
+** 퀴즈 :  홈폴더 아래  dir1/dir2/dir3 폴더 생성
+	    dir3 폴더로 이동해서  file.txt 빈파일 생성
+	파일에 내용을 채우고 저장하기
+	파일을 dir2 폴더로 복사하기
+	dir2 파일을 dir1 폴더로 이름바꿔서 이동하기
+	dir1 폴더의 파일을 편집해 보기
+	dir2 폴더의 파일을 dir3 폴더로 이동시키기
+	dir2 폴더와 그아래 모든 것을 삭제하기.
+
+** 퀴즈 : 리눅스 기반으로 gitStiudy/Quiz2 저장소 생성하고...
+	  a.txt 커밋 1회
+	  b.txt  c.txt 생성 후 커밋 1회 추가
+	  a.txt 수정 후 커밋+add 한번에...
+
+** 퀴즈 : Reset, Revert 연습
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
